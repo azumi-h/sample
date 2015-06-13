@@ -1,0 +1,11 @@
+/home/azumi-h/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20150531-29407-c1o3ih.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20150531-29407-e3kh5u

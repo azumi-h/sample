@@ -1,0 +1,31 @@
+/home/azumi-h/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20150531-15594-1je3q08.rb extconf.rb
+creating Makefile
+Compiling v8 for ia32
+Using python 2.4.3
+Using compiler: /usr/bin/c++ (GCC version 1.4.2)
+Unable to find a compiler officially supported by v8.
+It is recommended to use GCC v4.4 or higher
+Traceback (most recent call last):
+  File "build/gyp/gyp", line 15, in ?
+    import gyp
+  File "build/gyp/pylib/gyp/__init__.py", line 8, in ?
+    import gyp.input
+  File "build/gyp/pylib/gyp/input.py", line 14, in ?
+    import gyp.common
+  File "build/gyp/pylib/gyp/common.py", line 395
+    with open(source_path) as source_file:
+            ^
+SyntaxError: invalid syntax
+gmake: *** [out/Makefile.ia32] エラー 1
+/home/azumi-h/sample/vendor/bundler/ruby/2.2.0/gems/libv8-3.16.14.7/ext/libv8/location.rb:36:in `block in verify_installation!': libv8 did not install properly, expected binary v8 archive '/home/azumi-h/sample/vendor/bundler/ruby/2.2.0/gems/libv8-3.16.14.7/vendor/v8/out/ia32.release/obj.target/tools/gyp/libv8_base.a'to exist, but it was not found (Libv8::Location::Vendor::ArchiveNotFound)
+	from /home/azumi-h/sample/vendor/bundler/ruby/2.2.0/gems/libv8-3.16.14.7/ext/libv8/location.rb:35:in `each'
+	from /home/azumi-h/sample/vendor/bundler/ruby/2.2.0/gems/libv8-3.16.14.7/ext/libv8/location.rb:35:in `verify_installation!'
+	from /home/azumi-h/sample/vendor/bundler/ruby/2.2.0/gems/libv8-3.16.14.7/ext/libv8/location.rb:26:in `install!'
+	from extconf.rb:7:in `<main>'
+GYP_GENERATORS=make \
+	build/gyp/gyp --generator-output="out" build/all.gyp \
+	              -Ibuild/standalone.gypi --depth=. \
+	              -Dv8_target_arch=ia32 \
+	              -S.ia32  -Dv8_enable_backtrace=1 -Dv8_can_use_vfp2_instructions=true -Darm_fpu=vfpv2 -Dv8_can_use_vfp3_instructions=true -Darm_fpu=vfpv3 -Dwerror='' -Dv8_no_strict_aliasing=1
+
+extconf failed, exit code 1
